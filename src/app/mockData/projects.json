@@ -1,0 +1,96 @@
+[
+    { 
+        "_id": "67rdca3eeb7f6fgeed471824",
+        "userId": "67rdca3eeb7f6fgeed471815",
+        "image": "https://github.com/Karen-1992/my-images/blob/main/my_projects/cats_food.png?raw=true",
+        "title": "Cats food",
+        "description": "Cats food cards",
+        "path": "https://karen-1992.github.io/funbox-test-project/",
+        "stack": [
+            "67rdca3eeb7f6fgeed471103",
+            "67rdca3eeb7f6fgeed471818",
+            "67rdca3eeb7f6fgeed471820",
+            "67rdca3eeb7f6fgeed471814"
+        ]
+    },
+    { 
+        "_id": "67rdca3eeb7f6fgeed471825",
+        "userId": "67rdca3eeb7f6fgeed471815",
+        "image": "https://github.com/Karen-1992/my-images/blob/main/my_projects/feedback-form.png?raw=true",
+        "title": "Feedback form",
+        "description": "Feedback form with validation",
+        "path": "https://karen-1992.github.io/feedback-form/",
+        "stack": [
+            "67rdca3eeb7f6fgeed471103",
+            "67rdca3eeb7f6fgeed471818",
+            "67rdca3eeb7f6fgeed471820",
+            "67rdca3eeb7f6fgeed471814"
+        ]
+    },
+    { 
+        "_id": "67rdca3eeb7f6fgeed471826",
+        "userId": "67rdca3eeb7f6fgeed471815",
+        "image": "https://github.com/Karen-1992/my-images/blob/main/my_projects/online-shop.png?raw=true",
+        "title": "Online shop",
+        "description": "Project with html, css, react. Without libraries. My first test project",
+        "path": "https://github.com/Karen-1992/online-shop-test-project",
+        "stack": [
+            "67rdca3eeb7f6fgeed471103",
+            "67rdca3eeb7f6fgeed471818",
+            "67rdca3eeb7f6fgeed471820",
+            "67rdca3eeb7f6fgeed471814"
+        ]
+    },
+    { 
+        "_id": "67rdca3eeb7f6fgeed471827",
+        "userId": "67rdca3eeb7f6fgeed471815",
+        "image": "https://github.com/Karen-1992/my-images/blob/main/my_projects/my-cv.png?raw=true",
+        "title": "CV",
+        "description": "My CV project",
+        "path": "https://karen-1992.github.io/my-resume-en/",
+        "stack": [
+            "67rdca3eeb7f6fgeed471103",
+            "67rdca3eeb7f6fgeed471818"
+        ]
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471828",
+        "userId": "67rdca3eeb7f6fgeed471816",
+        "image": "https://github.com/JSproger73/IMAGES/blob/master/Pokemons%20game.jpg?raw=true",
+        "title": "Pokemons game",
+        "description": "This is a single page web application built on React JS.",
+        "path": "",
+        "stack": [
+            "67rdca3eeb7f6fgeed471103",
+            "67rdca3eeb7f6fgeed471818",
+            "67rdca3eeb7f6fgeed471820"
+        ]
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471829",
+        "userId": "67rdca3eeb7f6fgeed471816",
+        "image": "https://github.com/JSproger73/IMAGES/blob/master/Mortal%20Combat.jpg?raw=true",
+        "title": "Mortal Combat game",
+        "description": "This is a single page web application built on VanillaJS.",
+        "path": "",
+        "stack": [
+            "67rdca3eeb7f6fgeed471103",
+            "67rdca3eeb7f6fgeed471818",
+            "67rdca3eeb7f6fgeed471820"
+        ]
+    },
+    { 
+        "_id": "67rdca3eeb7f6fgeed191930",
+        "userId": "67rdca3eeb7f6fgeed47119а5",
+        "image": "https://user-images.githubusercontent.com/83139924/174456707-721bed30-d56c-497f-b685-1fef636d9815.png",
+        "title": "table-task",
+        "description": "Test task for company",
+        "path": "https://github.com/AlexChirkov2021/tesk_task_table",
+        "stack": [
+            "67rdca3eeb7f6fgeed471103",
+            "67rdca3eeb7f6fgeed471818",
+            "67rdca3eeb7f6fgeed471820",
+            "67rdca3eeb7f6fgeed471814"
+        ]
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "_id": "67rdca3eeb7f6fgeed471101",
+        "name": "teamlead",
+        "color": "danger"
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471102",
+        "name": "student",
+        "color": "info"
+    }
+]

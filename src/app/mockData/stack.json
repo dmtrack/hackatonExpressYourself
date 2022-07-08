@@ -1,0 +1,27 @@
+[
+    {
+        "_id": "67rdca3eeb7f6fgeed471103",
+        "name": "HTML",
+        "color": "primary"
+    },
+    { 
+        "_id": "67rdca3eeb7f6fgeed471818",
+        "name": "CSS",
+        "color": "danger"
+    },
+    { 
+        "_id": "67rdca3eeb7f6fgeed471820",
+        "name": "JavaScript",
+        "color": "warning"
+    },
+    { 
+        "_id": "67rdca3eeb7f6fgeed471814",
+        "name": "React",
+        "color": "success"
+    },
+    { 
+        "_id": "67rdca3eeb7f6fgeed471822",
+        "name": "NodeJS",
+        "color": "secondary"
+    }
+]

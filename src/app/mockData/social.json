@@ -1,0 +1,17 @@
+[
+    {
+        "_id": "67rdca3eeb7f6fgeed471198",
+        "name": "Instagram",
+        "image": "https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471100",
+        "name": "Telegram",
+        "image": "https://cdn-icons-png.flaticon.com/512/5968/5968804.png"
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed4711012",
+        "name": "GitHub",
+        "image": "https://cdn-icons-png.flaticon.com/512/1051/1051326.png"
+    }
+]
