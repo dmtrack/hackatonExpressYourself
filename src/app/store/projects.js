@@ -27,8 +27,7 @@ const projectsSlice = createSlice({
 });
 
 const { reducer: projectsReducer, actions } = projectsSlice;
-const { projectsRequested, projectsReceived, projectsRequestFailed } =
-    actions;
+const { projectsRequested, projectsReceived, projectsRequestFailed } = actions;
 
 export const loadProjectsList = () => async (dispatch, getState) => {
     const { lastFetch } = getState().projects;
@@ -46,9 +45,14 @@ export const loadProjectsList = () => async (dispatch, getState) => {
 export const getProjects = () => (state) => state.projects.entities;
 export const getProjectsLoadingStatus = () => (state) =>
     state.projects.isLoading;
-export const getProfessionById = (id) => (state) => {
+export const getProjectById = (id) => (state) => {
     if (state.projects.entities) {
         return state.projects.entities.find((p) => p._id === id);
+    }
+};
+export const getProjectsList = () => (state) => {
+    if (state.projects.entities) {
+        return state.projects.entities;
     }
 };
 
