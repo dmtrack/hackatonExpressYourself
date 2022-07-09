@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import CircleProgress from "./circleProgress";
 
 const Progress = ({ percent, title, color, type }) => {
     if (type === "bar" || type === "animatedStripe") {
@@ -21,9 +22,12 @@ const Progress = ({ percent, title, color, type }) => {
             </div>
         </>;
     };
-    return <>
-    circle progress
-    </>;
+    return (
+        <>
+            <h4>{title}</h4>
+            <CircleProgress percent={percent} color={color} />
+        </>
+    );
 };
 Progress.defaultProps = {
     percent: 0,

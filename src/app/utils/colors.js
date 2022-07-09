@@ -6,6 +6,5 @@ export const colors = {
     warning: "warning",
     info: "info",
     light: "light",
-    dark: "dark",
-    link: "link"
+    dark: "dark"
 };

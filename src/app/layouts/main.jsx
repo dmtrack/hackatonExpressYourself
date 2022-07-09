@@ -21,9 +21,10 @@ const Main = () => {
 
             <Badge color = {colors.success} content = "Example badge" />
             <Badge color = {colors.danger} content = "badge with size and type" type = {cornerTypes.squared} size = {2} />
-            <div style={{ width: "30%", padding: "20px" }} >
+            <div style={{ width: "50%", padding: "20px" }} >
                 <Progress title="HTML" percent ={25} color = {colors.success} type={progressTypes.animatedStripe} />
                 <Progress title="CSS" percent ={65} color = {colors.primary} />
+                <Progress title="React" percent ={80} color = {colors.danger} type={progressTypes.circle}/>
             </div>
 
             <div className="container mt-5">
