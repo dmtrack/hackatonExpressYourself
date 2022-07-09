@@ -18,7 +18,7 @@ const UserCard = ({
     onOpenCard
 }) => {
     return (
-        <div className="w-50 mb-5 shadow-lg p-3 mb-5 bg-body rounded">
+        <div className="w-100 mb-5 shadow-lg p-4 mb-5 bg-body rounded">
             <div>
                 <span>{name}</span>
                 <span> {surName}</span>
