@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+// import BookMark from "../common/bookmark";
 
 const UserCard = ({
     _id,
@@ -17,24 +18,47 @@ const UserCard = ({
     stack,
     onOpenCard
 }) => {
+    const handleClick = (id) => {
+        console.log("bookmark ID: ", id);
+    };
     return (
-        <div className="w-100 mb-5 shadow-lg p-4 mb-5 bg-body rounded">
-            <div>
-                <span>{name}</span>
-                <span> {surName}</span>
+        <div className="p-4 shadow-lg col-md-12 col-sm-8 col-xs-12">
+            <div className="m-auto w-50 h-50 position-relative">
+                <button
+                    className="position-absolute top-0 start-100 btn btn-light btn-sm border  border-2 border-primary"
+                    onClick={() => handleClick(_id)}
+                >
+                    <i className="bi bi-bookmarks"></i>
+                </button>
+                <div className="w-75 h75 m-auto rounded-circle">
+                    <img
+                        src={image}
+                        className="img-fluid border border-2 rounded-circle border-primary"
+                        alt="..."
+                    />
+                </div>
             </div>
-            <img src={image} className="w-25"/>
-            <p>{age}</p>
-            <p>{aboutMe}</p>
-            <p>{email}</p>
-            <p>{sex}</p>
-            <p>{aboutMyWorkInThisProject}</p>
-            <button
-                className="btn btn-primary"
-                onClick={() => onOpenCard(_id)}
-            >
-                Open Card
-            </button>
+            <div className="card-body d-flex flex-column text-left align-items-center ">
+                <div>
+                    <h5 className="card-title mb-2 ">
+                        <span>{name}</span>
+                        <span> {surName}</span>
+                    </h5>
+                </div>
+                <div className=" mw-75 fs-6 p-4 text-muted  ">
+                    <p className="card-text mb-1">{aboutMe}</p>
+                    <p className="card-text mb-1">E-mail: {email}</p>
+                    <p className="card-text mb-1">
+                        In this project: {aboutMyWorkInThisProject}
+                    </p>
+                </div>
+                <button
+                    className="btn btn-primary"
+                    onClick={() => onOpenCard(_id)}
+                >
+                    Open Card
+                </button>
+            </div>
         </div>
     );
 };
