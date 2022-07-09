@@ -1,11 +1,3 @@
 .squared {
     border-radius: 0!important;
 }
-.circle-background,
-.circle-progress {
-  fill: none;
-}
-
-.circle-text {
-  font-weight: bold;
-}

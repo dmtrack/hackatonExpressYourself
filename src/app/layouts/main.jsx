@@ -16,11 +16,11 @@ const Main = () => {
         <>
             <h1>Main</h1>
 
-            <Button title="button witn type, size" color = { colors.info } type = {cornerTypes.squared} size = { btnSizes.sm}/>
+            <Button title="button witn type, size" color = { colors.secondary } type = {cornerTypes.squared} size = { btnSizes.lg}/>
             <Button title="button without type, size" color = { colors.warning } />
 
             <Badge color = {colors.success} content = "Example badge" />
-            <Badge color = {colors.danger} content = "badge with size and type" type = {cornerTypes.squared} size = {2} />
+            <Badge color = {colors.danger} content = "badge with size and type" type = {cornerTypes.squared} size = {1} />
             <div style={{ width: "50%", padding: "20px" }} >
                 <Progress title="HTML" percent ={25} color = {colors.success} type={progressTypes.animatedStripe} />
                 <Progress title="CSS" percent ={65} color = {colors.primary} />
