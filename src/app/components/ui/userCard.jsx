@@ -46,7 +46,6 @@ const UserCard = ({
                     </h5>
                 </div>
                 <div className=" mw-75 fs-6 p-4 text-muted  ">
-                    {/* <p className="card-text mb-1">Age: {age}</p> */}
                     <p className="card-text mb-1">{aboutMe}</p>
                     <p className="card-text mb-1">E-mail: {email}</p>
                     <p className="card-text mb-1">

@@ -3,18 +3,25 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
     return (
-        <ul className="nav">
-            <li className="nav-item">
-                <Link className="nav-link " aria-current="page" to="/">
-                    Main
-                </Link>
-            </li>
-            <li className="nav-item">
-                <Link className="nav-link " aria-current="page" to="/bookmarks">
-                    Bookmarks
-                </Link>
-            </li>
-        </ul>
+        <nav className="navbar bg-light">
+            <div className="container-fluid">
+                <ul className="nav bg-light">
+                    <li className="nav-item">
+                        <Link className="nav-link " aria-current="page" to="/">
+                            Main
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link " aria-current="page" to="/bookmarks">
+                            Bookmarks
+                        </Link>
+                    </li>
+                </ul>
+                <div className="d flex">
+                    Hackaton-2 Project
+                </div>
+            </div>
+        </nav>
     );
 };
 
