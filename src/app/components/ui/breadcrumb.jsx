@@ -1,21 +1,38 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import { getPathArray } from "../../utils/getPathArray";
 
 const Breadcrumb = () => {
+    const history = useHistory();
     const { pathname } = useLocation();
     const pathArr = getPathArray(pathname);
+    const handleRedirect = (path) => {
+        if (path === "users") return;
+        history.push(`${path}`);
+    };
     return (
-        <div className="px-4 bg-light">
+        <div className="p-1 border-bottom my-3">
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
-                    {pathArr.lenght === 0 ? (
-                        <li className="breadcrumb-item active" aria-current="page">Main</li>
-                    ) : (
-                        pathArr.map(p => (
-                            <li key={p} className="breadcrumb-item active" aria-current="page">{p}</li>
-                        ))
-                    )}
+                    <li
+                        role="button"
+                        onClick={handleRedirect}
+                        className="breadcrumb-item active"
+                        aria-current="page"
+                    >
+                        <i className="bi bi-house-door"></i>
+                    </li>
+                    {pathArr.length !== 0 && pathArr.map(p => (
+                        <li
+                            role="button"
+                            onClick={() => handleRedirect(p)}
+                            key={p}
+                            className="breadcrumb-item active"
+                            aria-current="page"
+                        >
+                            {p}
+                        </li>
+                    ))}
                 </ol>
             </nav>
         </div>

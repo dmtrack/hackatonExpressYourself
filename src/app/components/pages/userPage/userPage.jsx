@@ -1,33 +1,33 @@
 import React from "react";
-import PropTypes, { element } from "prop-types";
-import { getUserById, getUsersLoadingStatus } from "../../../store/users";
+// import PropTypes, { element } from "prop-types";
+import { getUserById } from "../../../store/users";
 import { useSelector } from "react-redux";
 import UserFullCard from "../../ui/userFullCard";
 import { useParams } from "react-router-dom";
-import { getProjectById, getProjectsList } from "../../../store/projects";
+import { getProjectsList } from "../../../store/projects";
 
 const UserPage = () => {
     const { userId } = useParams();
     const user = useSelector(getUserById(userId));
     const projectsList = useSelector(getProjectsList());
 
-    function findProjects(id) {
-        useSelector(getProjectById(id));
-    }
+    // function findProjects(id) {
+    //     useSelector(getProjectById(id));
+    // }
 
-    console.log(user);
+    // console.log(user);
     const getProjects = (elements) => {
         const projectsArray = [];
-        elements.find((elem) => {
+        elements.forEach((elem) => {
             for (const project in projectsList) {
-                if (elem === projectsList._id) {
+                if (elem === project._id) {
                     projectsArray.push({
-                        _id: projectsList._id
+                        _id: project._id
                     });
                 }
             }
         });
-        return projectsList;
+        return projectsArray;
     };
     function test() {
         if (user) {
