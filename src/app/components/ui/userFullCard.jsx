@@ -9,17 +9,19 @@ import Progress from "../common/progress";
 import { progressTypes } from "../../utils/elementProps";
 import { getStackById } from "../../store/stack";
 import Loader from "../common/loader";
+import RolesBadges from "./rolesBadges";
 
 const UserFullCard = ({ user, projects }) => {
     return (
         <div>
             <div className="row gutters-sm">
-                <div className="col-md-5 mb-3 d-flex align-items-center">
+                <div className="col-md-5 mb-3 d-flex flex-column align-items-center">
                     <img
                         src={user.image}
                         className="rounded mx-auto d-block"
                         width="100%"
                     />
+                    <RolesBadges roleIds={user.roles} size={4}/>
                 </div>
                 <div className="col-md-7">
                     <div className="text-center py-3">
