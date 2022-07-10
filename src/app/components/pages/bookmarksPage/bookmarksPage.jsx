@@ -39,7 +39,10 @@ const BookmarksPage = () => {
                 newUsers.map(user => (
                     <div
                         key={user._id}
-                        className="container-fluid w-50 my-3"
+                        className="container-fluid my-3"
+                        style={{
+                            maxWidth: "300px"
+                        }}
                     >
                         <UserCard
                             {...user}

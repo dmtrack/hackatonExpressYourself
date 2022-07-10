@@ -56,7 +56,7 @@ export const getProjectsList = (ids) => (state) => {
                     userProjectsArray.push({
                         index: index,
                         _id: project._id,
-                        description: project.default,
+                        description: project.description,
                         path: project.path,
                         stack: project.stack,
                         title: project.title,
