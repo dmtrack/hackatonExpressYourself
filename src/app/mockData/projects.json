@@ -99,7 +99,7 @@
         "image": "",
         "title": "Slide carousel",
         "description": "Slide carousel",
-        "path": "https://imageup.ru/img109/3971251/sliderproject.jpg",
+        "path": "https://github.com/dmtrack/projectImages/blob/main/hackaton02-React/sliderProject.png?raw=true",
         "stack": [
             "67rdca3eeb7f6fgeed471103",
             "67rdca3eeb7f6fgeed471818",
@@ -112,7 +112,7 @@
         "image": "",
         "title": "Web games",
         "description": "",
-        "path": "https://imageup.ru/img195/3971248/gamesproject.jpg",
+        "path": "https://github.com/dmtrack/projectImages/blob/main/hackaton02-React/gamesProject.jpg?raw=true",
         "stack": [
             "67rdca3eeb7f6fgeed471103",
             "67rdca3eeb7f6fgeed471818",
@@ -125,7 +125,7 @@
         "image": "",
         "title": "Telegram bot programming and integration",
         "description": "",
-        "path": "https://imageup.ru/img93/3971249/mycollages.jpg",
+        "path": "https://github.com/dmtrack/projectImages/blob/main/hackaton02-React/MyCollages.jpg?raw=true",
         "stack": [
             "67rdca3eeb7f6fgeed471103"
         ]
