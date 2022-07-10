@@ -51,5 +51,17 @@ export const getRoleById = (id) => (state) => {
         return state.roles.entities.find((p) => p._id === id);
     }
 };
-
+export const getRoleByIds = (roleIds) => (state) => {
+    if (state.roles.entities) {
+        const rolesArray = [];
+        for (const roleId of roleIds) {
+            const role = state.roles.entities.find(r => r._id === roleId);
+            if (role) {
+                rolesArray.push(role);
+            }
+        }
+        return rolesArray;
+    }
+    return [];
+};
 export default rolesReducer;

@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { getUserBookmarkedStatus } from "../../store/users";
 import Button from "../common/button";
 import BookMark from "../common/bookmark";
+import RolesBadge from "./rolesBadges";
 
 const UserCard = ({
     _id,
@@ -13,6 +14,7 @@ const UserCard = ({
     email,
     aboutMyWorkInThisProject,
     image,
+    roles,
     onOpenCard,
     onToggleBookmark
 }) => {
@@ -21,7 +23,7 @@ const UserCard = ({
     };
     const isSelectedUSer = useSelector(getUserBookmarkedStatus(_id));
     return (
-        <div className="w-100 h-100 p-4 shadow-lg col-md-12 col-sm-8 col-xs-12 text-center">
+        <div className="w-100 h-100 p-2 shadow-lg col-md-12 col-sm-8 col-xs-12 text-center">
             <div className="m-auto position-relative">
                 <div className="rounded-circle m-auto" style={{
                     width: "175px",
@@ -40,6 +42,9 @@ const UserCard = ({
                         <span>{name}</span>
                         <span> {surName}</span>
                     </h5>
+                </div>
+                <div>
+                    <RolesBadge roleIds={roles} />
                 </div>
                 <div className=" mw-75 fs-6 p-4 text-muted  ">
                     <p className="card-text mb-1">{aboutMe}</p>
