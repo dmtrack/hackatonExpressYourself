@@ -8,6 +8,10 @@ import Bookmarks from "./layouts/bookmarks";
 import AppLoader from "./components/ui/hoc/appLoader";
 import Breadcrumb from "./components/ui/breadcrumb";
 import Footer from "./components/ui/footer";
+import Register from "./layouts/register";
+import UsersLoader from "./components/ui/hoc/usersLoader";
+import LogOut from "./layouts/logOut";
+
 
 const App = () => {
     return (
@@ -19,6 +23,7 @@ const App = () => {
                     <Switch>
                         <Route path="/bookmarks" exact component={Bookmarks} />
                         <Route path="/register" exact component={Register} />
+                        <Route path="/logout" component={LogOut} />
                         <Route path="/users/:userId?" exact component={User} />
                         <Route path="/" exact component={Main} />
                         <Redirect to="/" />

@@ -8,7 +8,8 @@ const initialState = {
     isLoading: false,
     error: null,
     dataLoaded: false,
-    bookmarks: localStorageService.fetchAllUsers() || []
+    bookmarks: localStorageService.fetchAllUsers(),
+    bookmarksCount: localStorageService.fetchAllUsers().length
 };
 
 const usersSlice = createSlice({
@@ -33,6 +34,7 @@ const usersSlice = createSlice({
             } else {
                 state.bookmarks.push(action.payload);
             }
+            state.bookmarksCount = state.bookmarks.length;
             localStorageService.setUsers(state.bookmarks);
         }
     }
@@ -77,5 +79,6 @@ export const getUserBookmarkedStatus = (userId) => (state) => {
 export const getDataStatus = () => (state) => state.users.dataLoaded;
 export const getUsersLoadingStatus = () => (state) => state.users.isLoading;
 export const getUsersErrors = () => (state) => state.users.error;
+export const getBookmarksCount = () => (state) => state.users.bookmarksCount;
 
 export default usersReducer;

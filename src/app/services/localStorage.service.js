@@ -9,7 +9,7 @@ export function getUser() {
 }
 
 export function fetchAllUsers() {
-    return JSON.parse(localStorage.getItem(BOOKMARKS));
+    return JSON.parse(localStorage.getItem(BOOKMARKS)) || [];
 }
 
 export function setUsers(data) {
