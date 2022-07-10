@@ -1,9 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { getIsLoggedIn } from "../../store/users";
 import BookmarkCounter from "./bookmarkCounter";
 import NavProfile from "./navProfile";
 
 const NavBar = () => {
+    const isLoggedIn = useSelector(getIsLoggedIn());
     return (
         <nav className="navbar bg-secondary py-3">
             <div className="container-fluid d-flex justify-content-space-betwen">
@@ -24,7 +27,17 @@ const NavBar = () => {
                     Hackaton-2 Project
                 </div>
                 <div className="d-flex">
-                    <NavProfile />
+                    {isLoggedIn ? (
+                        <NavProfile />
+                    ) : (
+                        <Link
+                            className="nav-link bg-light rounded-3 lh-1"
+                            aria-current="page"
+                            to="/register"
+                        >
+                            Login
+                        </Link>
+                    )}
                 </div>
             </div>
         </nav>

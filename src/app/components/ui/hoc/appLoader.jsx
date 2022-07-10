@@ -3,8 +3,7 @@ import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../../common/loader";
 import {
-    getUsersLoadingStatus,
-    loadUsersList
+    getUsersLoadingStatus
 } from "../../../store/users";
 import { loadProjectsList } from "../../../store/projects";
 import { loadRolesList } from "../../../store/roles";
@@ -15,7 +14,6 @@ const AppLoader = ({ children }) => {
     const dispatch = useDispatch();
     const usersStatusLoading = useSelector(getUsersLoadingStatus());
     useEffect(() => {
-        dispatch(loadUsersList());
         dispatch(loadProjectsList());
         dispatch(loadRolesList());
         dispatch(loadSocialList());

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import UserCard from "./userCard";
 import PropTypes from "prop-types";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -16,6 +16,22 @@ import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 
 const Slider3D = ({ users, onToggleBookmark, onOpenCard }) => {
+    const [windowWidth, setWindowWidth] = useState(0);
+    const resizeWindow = () => {
+        setWindowWidth(window.innerWidth);
+    };
+    useEffect(() => {
+        resizeWindow();
+        window.addEventListener("resize", resizeWindow);
+        return () => window.removeEventListener("resize", resizeWindow);
+    }, []);
+    const getCount = (width) => {
+        let quantity = 3;
+        if (width < 1000) quantity = 2;
+        if (width < 800) quantity = 1;
+        return quantity;
+    };
+    const quantityCard = getCount(windowWidth);
     return (
         <div className="my-4">
             <Swiper
@@ -29,8 +45,9 @@ const Slider3D = ({ users, onToggleBookmark, onOpenCard }) => {
                 ]}
                 grabCursor={true}
                 centeredSlides={true}
-                spaceBetween={75}
-                slidesPerView={3}
+                spaceBetween={50}
+                // slidesPerView={2}
+                slidesPerView={quantityCard}
                 navigation
                 pagination={{ clickable: true }}
                 mousewheel
@@ -38,8 +55,8 @@ const Slider3D = ({ users, onToggleBookmark, onOpenCard }) => {
                 effect={"coverflow"}
                 coverflowEffect={{
                     rotate: 50,
-                    stretch: 0,
-                    depth: 200,
+                    stretch: 5,
+                    depth: 150,
                     modifier: 1,
                     slideShadows: true
                 }}

@@ -1,5 +1,7 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
+import { getUserById } from "../../store/users";
 import { getPathArray } from "../../utils/getPathArray";
 
 const Breadcrumb = () => {
@@ -7,8 +9,17 @@ const Breadcrumb = () => {
     const { pathname } = useLocation();
     const pathArr = getPathArray(pathname);
     const handleRedirect = (path) => {
-        if (path === "users") return;
+        if (typeof path === "object") {
+            history.push("/");
+            return;
+        }
         history.push(`${path}`);
+    };
+
+    const getPath = (path) => {
+        const user = useSelector(getUserById(path));
+        if (user) return (user.name + " " + user.surName);
+        return path;
     };
     return (
         <div className="p-1 border-bottom my-3">
@@ -17,20 +28,20 @@ const Breadcrumb = () => {
                     <li
                         role="button"
                         onClick={handleRedirect}
-                        className="breadcrumb-item active"
+                        className="breadcrumb-item"
                         aria-current="page"
                     >
                         <i className="bi bi-house-door"></i>
                     </li>
-                    {pathArr.length !== 0 && pathArr.map(p => (
+                    {pathArr.length !== 0 && pathArr.map(path => (
                         <li
                             role="button"
-                            onClick={() => handleRedirect(p)}
-                            key={p}
-                            className="breadcrumb-item active"
+                            onClick={() => handleRedirect(path)}
+                            key={path}
+                            className="breadcrumb-item"
                             aria-current="page"
                         >
-                            {p}
+                            {getPath(path)}
                         </li>
                     ))}
                 </ol>
