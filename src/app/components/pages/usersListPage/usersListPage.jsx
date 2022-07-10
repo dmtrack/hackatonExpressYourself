@@ -22,6 +22,7 @@ const UsersListPage = () => {
     };
     return (
         <div className="d-flex flex-column">
+            <div className="col-md-8 mx-auto my-3 p-2">
                 <h1 className="text-center">Our Team</h1>
                 <p>
                     We are students of group 23 of the Result School,

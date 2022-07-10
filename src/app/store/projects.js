@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import projectsService from "../services/projects.service";
 import isOutDated from "../utils/isOutDated";
-import { element } from "prop-types";
 
 const projectsSlice = createSlice({
     name: "projects",
@@ -69,10 +68,10 @@ export const getProjectsList = (ids) => (state) => {
         return userProjectsArray;
     }
 };
-export const getProjectsList = () => (state) => {
-    if (state.projects.entities) {
-        return state.projects.entities;
-    }
-};
+// export const getProjectsList = () => (state) => {
+//     if (state.projects.entities) {
+//         return state.projects.entities;
+//     }
+// };
 
 export default projectsReducer;
