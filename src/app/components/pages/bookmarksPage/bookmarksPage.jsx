@@ -41,7 +41,7 @@ const BookmarksPage = () => {
                         key={user._id}
                         className="container-fluid my-3"
                         style={{
-                            maxWidth: "300px"
+                            maxWidth: "350px"
                         }}
                     >
                         <UserCard

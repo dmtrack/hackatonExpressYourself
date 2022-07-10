@@ -11,7 +11,11 @@ const UsersListPage = () => {
     const history = useHistory();
     const users = useSelector(getUsersList());
     const handleOpenCard = (id) => {
-        history.push(`/${id}`);
+        if (isAuth) {
+            history.push(`/${id}`);
+        } else {
+            history.push("/register");
+        }
     };
     const handleToggleBookmark = (id) => {
         if (isAuth) {
