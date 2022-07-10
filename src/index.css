@@ -7,4 +7,9 @@
 .squared {
     border-radius: 0!important;
 }
-
+.logo-img{
+    width:30px;
+    height:auto;
+    padding-bottom: 5px;
+   vertical-align: middle;
+}

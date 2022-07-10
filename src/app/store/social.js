@@ -46,9 +46,9 @@ export const loadSocialList = () => async (dispatch, getState) => {
 export const getSocial = () => (state) => state.social.entities;
 export const getSocialLoadingStatus = () => (state) =>
     state.social.isLoading;
-export const getProfessionById = (id) => (state) => {
+export const getSocialImageById = (id) => (state) => {
     if (state.social.entities) {
-        return state.social.entities.find((p) => p._id === id);
+        return (state.social.entities.find((p) => p._id === id))?.image;
     }
 };
 

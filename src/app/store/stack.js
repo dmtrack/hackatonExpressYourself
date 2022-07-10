@@ -46,9 +46,9 @@ export const loadStackList = () => async (dispatch, getState) => {
 export const getStack = () => (state) => state.stack.entities;
 export const getStackLoadingStatus = () => (state) =>
     state.stack.isLoading;
-export const getProfessionById = (id) => (state) => {
+export const getStackById = (id) => (state) => {
     if (state.stack.entities) {
-        return state.stack.entities.find((p) => p._id === id);
+        return (state.stack.entities.find((p) => p._id === id));
     }
 };
 
