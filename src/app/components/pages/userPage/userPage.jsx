@@ -9,8 +9,6 @@ const UserPage = () => {
     const { userId } = useParams();
     const user = useSelector(getUserById(userId));
     const projectsList = useSelector(getProjectsList(user.projects));
-    console.log(user);
-    console.log(projectsList);
     return (
         <div className="bg-secondary bg-opacity-10 p-2">
             <div className="container">

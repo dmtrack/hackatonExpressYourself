@@ -3,14 +3,21 @@ import PropTypes from "prop-types";
 import Slider from "./slider";
 import Badge from "../common/badge";
 import { colors } from "../../utils/colors";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getSocialImageById } from "../../store/social";
 import Progress from "../common/progress";
 import { progressTypes } from "../../utils/elementProps";
 import { getStackById } from "../../store/stack";
 import Loader from "../common/loader";
+import BookMark from "../common/bookmark";
+import { getUserBookmarkedStatus, toggleUsersBookmarks } from "../../store/users";
 
 const UserFullCard = ({ user, projects }) => {
+    const dispatch = useDispatch();
+    const handleToggleBookmark = (id) => {
+        dispatch(toggleUsersBookmarks(id));
+    };
+    const isSelectedUSer = useSelector(getUserBookmarkedStatus(user._id));
     return (
         <div>
             <div className="row gutters-sm">
@@ -23,13 +30,19 @@ const UserFullCard = ({ user, projects }) => {
                 </div>
                 <div className="col-md-7">
                     <div className="text-center py-3">
-                        <Badge
-                            content={`${user.name} ${user.surName}`}
-                            color={colors.secondary}
-                            size={1}
-                        />
+                        <div className="d-flex flex-row justify-content-around">
+                            <Badge
+                                content={`${user.name} ${user.surName}`}
+                                color={colors.secondary}
+                                size={1}
+                            />
+                            <BookMark
+                                onClick={() => handleToggleBookmark(user._id)}
+                                status = {isSelectedUSer}
+                            />
+                        </div>
                         <div className="pt-3">
-                            <h6>{`age: ${user.age}`}</h6>
+                            <h4>{`Age: ${user.age}`}</h4>
                         </div>
                         <div className="pt-3 fs-4">
                             {user.aboutMe}

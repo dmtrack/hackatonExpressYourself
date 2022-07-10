@@ -81,7 +81,7 @@
     },
     {
         "_id": "67rdca3eeb7f6fgeed191930",
-        "userId": "67rdca3eeb7f6fgeed47119а5",
+        "userId": "67rdca3eeb7f6fgeed471818",
         "image": "https://user-images.githubusercontent.com/83139924/174456707-721bed30-d56c-497f-b685-1fef636d9815.png",
         "title": "table-task",
         "description": "Test task for company",
@@ -128,6 +128,42 @@
         "path": "https://github.com/dmtrack/projectImages/blob/main/hackaton02-React/MyCollages.jpg?raw=true",
         "stack": [
             "67rdca3eeb7f6fgeed471103"
+        ]
+    },
+    { "_id": "3f411b8e-ff0b-11ec-b939-0242ac120002",
+        "userId": "67rdca3eeb7f6fgeed471817",
+        "image": "https://github.com/OksanaGerasymenko/img/blob/main/studentCard.png?raw=true",
+        "title": "Visiting card",
+        "description": "this landing uses HTML and CSS",
+        "path": "https://oksanagerasymenko.github.io/CV_OksanaGerasymenko/",
+        "stack": [
+            "67rdca3eeb7f6fgeed471103",
+            "67rdca3eeb7f6fgeed471818"
+        ]
+    },
+    { "_id": "3f4117ba-ff0b-11ec-b939-0242ac120002",
+        "userId": "67rdca3eeb7f6fgeed471817",
+        "image": "https://github.com/OksanaGerasymenko/img/blob/main/hackaton1.PNG?raw=true",
+        "title": "Context menu",
+        "description": "team project with development on GitHub",
+        "path": "https://github.com/OksanaGerasymenko/01-hackathon",
+        "stack": [
+            "67rdca3eeb7f6fgeed471103",
+            "67rdca3eeb7f6fgeed471818",
+            "67rdca3eeb7f6fgeed471820"
+        ]
+    },
+    { "_id": "3f411a62-ff0b-11ec-b939-0242ac120002",
+        "userId": "67rdca3eeb7f6fgeed471817",
+        "image": "https://github.com/OksanaGerasymenko/img/blob/main/fast-company.png?raw=true",
+        "title": "Fast Company",
+        "description": "SPA with authorization",
+        "path": "https://github.com/OksanaGerasymenko/fast-company",
+        "stack": [
+            "67rdca3eeb7f6fgeed471103",
+            "67rdca3eeb7f6fgeed471818",
+            "67rdca3eeb7f6fgeed471820",
+            "67rdca3eeb7f6fgeed471814"
         ]
     }
 ]
