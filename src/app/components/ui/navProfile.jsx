@@ -3,8 +3,6 @@ import localStorageService from "../../services/localStorage.service";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logOut } from "../../store/users";
-// import { useSelector } from "react-redux";
-// import { getCurrentUserData } from "../../store/users";
 
 const NavProfile = () => {
     const dispatch = useDispatch();
@@ -20,7 +18,7 @@ const NavProfile = () => {
     return (
         <div className="dropdown" onClick={toggleMenu}>
             <div className="btn dropdown-toggle d-flex align-items-center">
-                <div className="me-2">{currentUser.name}</div>
+                <div className="me-2 text-light">{currentUser.name}</div>
                 <img
                     src={currentUser.image}
                     alt=""

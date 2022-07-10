@@ -9,7 +9,7 @@ const initialState = {
     error: null,
     dataLoaded: false,
     auth: { userId: localStorageService.getUser() },
-    isLoggedIn: localStorageService.getUser(),
+    isLoggedIn: !!localStorageService.getUser(),
     bookmarks: localStorageService.fetchAllUsers(),
     bookmarksCount: localStorageService.fetchAllUsers().length
 };
@@ -46,6 +46,7 @@ const usersSlice = createSlice({
         userLoggedOut: (state) => {
             state.bookmarks = null;
             state.isLoggedIn = false;
+            state.bookmarksCount = 0;
             state.auth = null;
         }
     }
@@ -70,9 +71,9 @@ export const login = ({ payload, redirect }) => (dispatch) => {
     history.push(redirect);
 };
 export const logOut = () => (dispatch) => {
+    dispatch(userLoggedOut());
     localStorageService.removeUser();
     localStorageService.removeBookmarks();
-    dispatch(userLoggedOut());
 };
 
 export const loadUsersList = () => async (dispatch) => {

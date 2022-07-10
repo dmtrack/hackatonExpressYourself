@@ -68,10 +68,7 @@ const RegisterForm = () => {
         const redirect = history.location.state
             ? history.location.state.from.pathname
             : "/";
-        console.log(redirect);
         dispatch(login({ payload: newData, redirect }));
-        // localStorageService.authUser(newData);
-        // history.push("/bookmarks");
     };
 
     return (
