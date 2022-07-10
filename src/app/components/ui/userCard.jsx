@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { getUserBookmarkedStatus } from "../../store/users";
 import Badge from "../common/badge";
 import { colors } from "../../utils/colors";
-import { getRoles } from "@testing-library/react";
+// import { getRoles } from "@testing-library/react";
 
 const UserCard = ({
     _id,
@@ -20,12 +20,12 @@ const UserCard = ({
     onOpenCard,
     onToggleBookmark
 }) => {
-    console.log(roles);
+    // console.log(roles);
     const handleClick = (id) => {
         onToggleBookmark(id);
     };
-    const userRoles = useSelector(getRoles());
-    console.log(userRoles);
+    // const userRoles = useSelector(getRoles());
+    // console.log(userRoles);
     const bookmarkStatus = useSelector(getUserBookmarkedStatus(_id));
     const styleAvatarWrapper = {
         width: "200px",
