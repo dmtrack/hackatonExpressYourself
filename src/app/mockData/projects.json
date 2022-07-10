@@ -92,5 +92,42 @@
             "67rdca3eeb7f6fgeed471820",
             "67rdca3eeb7f6fgeed471814"
         ]
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471991",
+        "userId": "67rdca3eeb7f6fgeed47119а9",
+        "image": "https://github.com/dmtrack/projectImages/blob/main/hackaton02-React/sliderProject.png?raw=true",
+        "title": "Slide carousel",
+        "description": "Slide carousel",
+        "path": "https://github.com/dmtrack/projectImages/blob/main/hackaton02-React/sliderProject.png?raw=true",
+        "stack": [
+            "67rdca3eeb7f6fgeed471103",
+            "67rdca3eeb7f6fgeed471818",
+            "67rdca3eeb7f6fgeed471820"
+        ]
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471992",
+        "userId": "67rdca3eeb7f6fgeed47119а9",
+        "image": "https://github.com/dmtrack/projectImages/blob/main/hackaton02-React/gamesProject.jpg?raw=true",
+        "title": "Web games",
+        "description": "",
+        "path": "https://github.com/dmtrack/projectImages/blob/main/hackaton02-React/gamesProject.jpg?raw=true",
+        "stack": [
+            "67rdca3eeb7f6fgeed471103",
+            "67rdca3eeb7f6fgeed471818",
+            "67rdca3eeb7f6fgeed471820"
+        ]
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471993",
+        "userId": "67rdca3eeb7f6fgeed47119а9",
+        "image": "https://github.com/dmtrack/projectImages/blob/main/hackaton02-React/MyCollages.jpg?raw=true",
+        "title": "Telegram bot programming and integration",
+        "description": "",
+        "path": "https://github.com/dmtrack/projectImages/blob/main/hackaton02-React/MyCollages.jpg?raw=true",
+        "stack": [
+            "67rdca3eeb7f6fgeed471103"
+        ]
     }
 ]

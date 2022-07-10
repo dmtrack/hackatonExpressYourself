@@ -42,6 +42,7 @@ const usersSlice = createSlice({
         authSuccess: (state, action) => {
             state.auth = action.payload;
             state.isLoggedIn = true;
+            state.bookmarks = [];
         },
         userLoggedOut: (state) => {
             state.bookmarks = null;
@@ -100,7 +101,7 @@ export const getUserById = (userId) => (state) => {
 
 export const getUserBookmarkedStatus = (userId) => (state) => {
     if (state.users.bookmarks) {
-        return state.users.bookmarks.find((u) => u._id === userId);
+        return state.users.bookmarks.includes(userId);
     }
 };
 

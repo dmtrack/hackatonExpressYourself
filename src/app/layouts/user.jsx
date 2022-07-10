@@ -1,10 +1,14 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Redirect, useParams } from "react-router-dom";
 import UserPage from "../components/pages/userPage/userPage";
+import { getUserById } from "../store/users";
 
 const User = () => {
     const params = useParams();
     const { userId } = params;
+    const user = useSelector(getUserById(userId));
+    if (!user) return <Redirect to={"/"} />;
     return (
         <>
             {userId && (

@@ -13,15 +13,17 @@ const BookmarksPage = () => {
     const users = useSelector(getUsersList());
     const findUsers = () => {
         const arr = [];
-        users.forEach(user => {
-            if (bookmarkedUsers.includes(user._id)) {
-                arr.push(user);
-            }
-        });
+        if (bookmarkedUsers) {
+            users.forEach(user => {
+                if (bookmarkedUsers.includes(user._id)) {
+                    arr.push(user);
+                }
+            });
+        }
         return arr;
     };
     const handleOpenCard = (id) => {
-        history.push(`/users/${id}`);
+        history.push(`/${id}`);
     };
     const handleToggleBookmark = (id) => {
         if (isAuth) {
@@ -37,7 +39,7 @@ const BookmarksPage = () => {
                 newUsers.map(user => (
                     <div
                         key={user._id}
-                        className="m-5 card w-25"
+                        className="container-fluid w-50 my-3"
                     >
                         <UserCard
                             {...user}
@@ -47,7 +49,7 @@ const BookmarksPage = () => {
                     </div>
                 )
                 )) : (
-                <h1>Empty</h1>
+                <h1 className="my-5">Please, add users</h1>
             )}
         </div>
     );

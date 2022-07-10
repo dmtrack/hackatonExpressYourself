@@ -11,7 +11,6 @@ const UsersListPage = () => {
     const history = useHistory();
     const users = useSelector(getUsersList());
     const handleOpenCard = (id) => {
-        // history.push(`/users/${id}`);
         history.push(`/${id}`);
     };
     const handleToggleBookmark = (id) => {
@@ -23,7 +22,7 @@ const UsersListPage = () => {
     };
     return (
         <div className="d-flex flex-column">
-            <div className="col-md-8 mx-auto my-3 p-2">
+            <div className="col-md-8 text-center mx-auto my-3 p-2">
                 <h1 className="text-center">Our Team</h1>
                 <p>
                     We are students of group 23 of the Result School,

@@ -1,5 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
+import { getUserBookmarkedStatus } from "../../store/users";
+import Button from "../common/button";
 // import BookMark from "../common/bookmark";
 
 const UserCard = ({
@@ -16,16 +19,23 @@ const UserCard = ({
     const handleClick = (id) => {
         onToggleBookmark(id);
     };
+    const isSelectedUSer = useSelector(getUserBookmarkedStatus(_id));
     return (
-        <div className="p-4 shadow-lg col-md-12 col-sm-8 col-xs-12">
-            <div className="m-auto w-50 h-50 position-relative">
-                <button
-                    className="position-absolute top-0 start-100 btn btn-light btn-sm border  border-2 border-primary"
+        <div className="w-100 h-100 p-4 shadow-lg col-md-12 col-sm-8 col-xs-12 text-center">
+            <div className="m-auto position-relative">
+                {/* <button
+                    className="position-absolute top-0 start-75 btn btn-light btn-sm border  border-2 border-primary"
                     onClick={() => handleClick(_id)}
                 >
-                    <i className="bi bi-bookmarks"></i>
-                </button>
-                <div className="w-75 h75 m-auto rounded-circle">
+                    <i
+                        className={"bi bi-bookmarks" + (isSelectedUSer ? "-fill" : "")}
+                    ></i>
+                </button> */}
+                {/* <div className="w-75 h-75 m-auto rounded-circle"> */}
+                <div className="rounded-circle m-auto" style={{
+                    width: "175px",
+                    height: "175px"
+                }}>
                     <img
                         src={image}
                         className="img-fluid border border-2 rounded-circle border-primary"
@@ -47,12 +57,20 @@ const UserCard = ({
                         In this project: {aboutMyWorkInThisProject}
                     </p>
                 </div>
-                <button
-                    className="btn btn-primary"
-                    onClick={() => onOpenCard(_id)}
-                >
-                    Open Card
-                </button>
+                <div className="d-flex center">
+                    <Button
+                        onClick={() => onOpenCard(_id)}
+                        title="View Profile"
+                    />
+                    <button
+                        className="btn btn-light btn-sm border  border-2 border-primary mx-4"
+                        onClick={() => handleClick(_id)}
+                    >
+                        <i
+                            className={"bi bi-bookmarks" + (isSelectedUSer ? "-fill" : "")}
+                        ></i>
+                    </button>
+                </div>
             </div>
         </div>
     );
