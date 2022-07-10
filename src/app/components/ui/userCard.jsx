@@ -6,20 +6,15 @@ const UserCard = ({
     _id,
     name,
     surName,
-    age,
     aboutMe,
     email,
     aboutMyWorkInThisProject,
     image,
-    sex,
-    projects,
-    roles,
-    socialNetworks,
-    stack,
-    onOpenCard
+    onOpenCard,
+    onToggleBookmark
 }) => {
     const handleClick = (id) => {
-        console.log("bookmark ID: ", id);
+        onToggleBookmark(id);
     };
     return (
         <div className="p-4 shadow-lg col-md-12 col-sm-8 col-xs-12">
@@ -67,17 +62,15 @@ UserCard.propTypes = {
     _id: PropTypes.string,
     name: PropTypes.string,
     surName: PropTypes.string,
-    age: PropTypes.number,
     aboutMe: PropTypes.string,
     email: PropTypes.string,
     aboutMyWorkInThisProject: PropTypes.string,
     image: PropTypes.string,
     sex: PropTypes.string,
-    projects: PropTypes.array,
     roles: PropTypes.array,
-    socialNetworks: PropTypes.arrayOf(PropTypes.object),
-    stack: PropTypes.arrayOf(PropTypes.object),
-    onOpenCard: PropTypes.func
+    onOpenCard: PropTypes.func,
+    onToggleBookmark: PropTypes.func
+
 };
 
 export default UserCard;

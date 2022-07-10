@@ -1,9 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { getDataStatus, getUsersList } from "../../../store/users";
+import { getDataStatus, getUsersList, toggleUsersBookmarks } from "../../../store/users";
 import Loader from "../../common/loader";
 import UserCard from "../../ui/userCard";
+import localStorageService from "../../../services/localStorage.service";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
     Navigation,
@@ -19,16 +20,25 @@ import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 
 const UsersListPage = () => {
+    const isAuth = localStorageService.getUser();
+    const dispatch = useDispatch();
     const history = useHistory();
     const users = useSelector(getUsersList());
     const dataStatus = useSelector(getDataStatus());
     const handleOpenCard = (id) => {
         history.push(`/users/${id}`);
     };
+    const handleToggleBookmark = (id) => {
+        if (isAuth) {
+            dispatch(toggleUsersBookmarks(id));
+        } else {
+            history.push("/register");
+        }
+    };
     if (!dataStatus) return <Loader />;
     return (
         <div className="d-flex flex-column">
-            <div className="col-md-8 mx-auto my-3">
+            <div className="col-md-8 mx-auto my-3 p-2">
                 <h1 className="text-center">Our Team</h1>
                 <p>
                     We are students of group 23 of the Result School,
@@ -47,7 +57,7 @@ const UsersListPage = () => {
                     but now we are doing the same thing
                 </p>
             </div>
-            <div>
+            <div className="my-4">
                 <Swiper
                     modules={[
                         Navigation,
@@ -70,7 +80,7 @@ const UsersListPage = () => {
                         rotate: 50,
                         stretch: 0,
                         depth: 200,
-                        modifier: 3,
+                        modifier: 1,
                         slideShadows: true
                     }}
                     className="mySwiper"
@@ -78,6 +88,7 @@ const UsersListPage = () => {
                     {users.map(user => (
                         <SwiperSlide key={user._id}>
                             <UserCard
+                                onToggleBookmark={handleToggleBookmark}
                                 onOpenCard={handleOpenCard}
                                 {...user}
                             />
