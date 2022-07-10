@@ -69,5 +69,10 @@ export const getProjectsList = (ids) => (state) => {
         return userProjectsArray;
     }
 };
+export const getProjectsList = () => (state) => {
+    if (state.projects.entities) {
+        return state.projects.entities;
+    }
+};
 
 export default projectsReducer;

@@ -25,7 +25,6 @@ const CircleProgress = ({ size, color, percent }) => {
         max-height="100%"
         viewBox={viewBox}>
         <circle
-            className="circle-background"
             cx={size / 2}
             cy={size / 2}
             r={radius}

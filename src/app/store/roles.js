@@ -46,7 +46,7 @@ export const loadRolesList = () => async (dispatch, getState) => {
 export const getRoles = () => (state) => state.roles.entities;
 export const getRolesLoadingStatus = () => (state) =>
     state.roles.isLoading;
-export const getProfessionById = (id) => (state) => {
+export const getRoleById = (id) => (state) => {
     if (state.roles.entities) {
         return state.roles.entities.find((p) => p._id === id);
     }

@@ -1,11 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
+import localStorageService from "../services/localStorage.service";
+
 import userService from "../services/user.service";
 
 const initialState = {
     entities: null,
     isLoading: false,
     error: null,
-    dataLoaded: false
+    dataLoaded: false,
+    bookmarks: localStorageService.fetchAllUsers() || []
 };
 
 const usersSlice = createSlice({
@@ -23,6 +26,14 @@ const usersSlice = createSlice({
         usersRequestFailed: (state, action) => {
             state.error = action.payload;
             state.isLoading = false;
+        },
+        userToggleBookmarked: (state, action) => {
+            if (state.bookmarks.includes(action.payload)) {
+                state.bookmarks = state.bookmarks.filter(b => b !== action.payload);
+            } else {
+                state.bookmarks.push(action.payload);
+            }
+            localStorageService.setUsers(state.bookmarks);
         }
     }
 });
@@ -31,7 +42,8 @@ const { reducer: usersReducer, actions } = usersSlice;
 const {
     usersRequested,
     usersReceived,
-    usersRequestFailed
+    usersRequestFailed,
+    userToggleBookmarked
 } = actions;
 
 export const loadUsersList = () => async (dispatch) => {
@@ -44,10 +56,21 @@ export const loadUsersList = () => async (dispatch) => {
     }
 };
 
+export const toggleUsersBookmarks = (userId) => (dispatch) => {
+    dispatch(userToggleBookmarked(userId));
+};
+
 export const getUsersList = () => (state) => state.users.entities;
+export const getBookmarkUsersList = () => (state) => state.users.bookmarks;
 export const getUserById = (userId) => (state) => {
     if (state.users.entities) {
         return state.users.entities.find((u) => u._id === userId);
+    }
+};
+
+export const getUserBookmarkedStatus = (userId) => (state) => {
+    if (state.users.bookmarks) {
+        return state.users.bookmarks.find((u) => u._id === userId);
     }
 };
 

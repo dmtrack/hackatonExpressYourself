@@ -11,18 +11,20 @@ import Footer from "./components/ui/footer";
 
 const App = () => {
     return (
-        <div className="bg-warning">
+        <div className="bg-light">
             <AppLoader>
-                <NavBar />
-                <Breadcrumb />
-                <Switch>
-                    {/* <Route path="/users/:userId?/" component={Users} /> */}
-                    <Route path="/bookmarks" exact component={Bookmarks} />
-                    <Route path="/users/:userId?/" exact component={User} />
-                    <Route path="/" exact component={Main} />
-                    <Redirect to="/" />
-                </Switch>
-                <Footer />
+                <UsersLoader>
+                    <NavBar />
+                    <Breadcrumb />
+                    <Switch>
+                        <Route path="/bookmarks" exact component={Bookmarks} />
+                        <Route path="/register" exact component={Register} />
+                        <Route path="/users/:userId?" exact component={User} />
+                        <Route path="/" exact component={Main} />
+                        <Redirect to="/" />
+                    </Switch>
+                    <Footer />
+                </UsersLoader>
             </AppLoader>
             <ToastContainer />
         </div>
