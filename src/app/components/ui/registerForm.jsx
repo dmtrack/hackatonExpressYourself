@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import { validator } from "../../utils/validator";
 import TextField from "../common/form/textField";
 import CheckBoxField from "../common/form/checkBoxField";
-import localStorageService from "../../services/localStorage.service";
 import { useHistory } from "react-router-dom";
 import getRandomAvatar from "../../utils/getRandomAvatar";
+import { login } from "../../store/users";
+import { useDispatch } from "react-redux";
 
 const RegisterForm = () => {
+    const dispatch = useDispatch();
     const history = useHistory();
     const [data, setData] = useState({
         name: "",
@@ -63,8 +65,10 @@ const RegisterForm = () => {
             ...data,
             image: getRandomAvatar()
         };
-        localStorageService.authUser(newData);
-        history.push("/bookmarks");
+        const redirect = history.location.state
+            ? history.location.state.from.pathname
+            : "/";
+        dispatch(login({ payload: newData, redirect }));
     };
 
     return (

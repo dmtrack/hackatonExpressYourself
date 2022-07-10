@@ -32,12 +32,12 @@ const BookmarksPage = () => {
     };
     const newUsers = findUsers();
     return (
-        <div className="d-flex justify-content-center flex-wrap">
+        <div className="d-flex justify-content-center flex-wrap mb-5">
             {newUsers.length > 0 ? (
                 newUsers.map(user => (
                     <div
                         key={user._id}
-                        className="m-3 card w-25"
+                        className="m-5 card w-25"
                     >
                         <UserCard
                             {...user}
@@ -47,7 +47,7 @@ const BookmarksPage = () => {
                     </div>
                 )
                 )) : (
-                <p>ferghthth</p>
+                <h1>Empty</h1>
             )}
         </div>
     );

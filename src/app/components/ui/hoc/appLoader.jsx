@@ -3,8 +3,7 @@ import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../../common/loader";
 import {
-    getUsersLoadingStatus,
-    loadUsersList
+    getUsersLoadingStatus
 } from "../../../store/users";
 import { loadProjectsList } from "../../../store/projects";
 import { loadRolesList } from "../../../store/roles";
