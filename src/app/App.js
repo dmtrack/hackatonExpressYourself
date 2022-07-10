@@ -21,7 +21,6 @@ const App = () => {
                     <Switch>
                         <Route path="/bookmarks" exact component={Bookmarks} />
                         <Route path="/register" exact component={Register} />
-                        {/* <Route path="/users/:userId?" exact component={User} /> */}
                         <Route path="/" exact component={Main} />
                         <Route path="/:userId?" exact component={User} />
                         <Redirect to="/" />

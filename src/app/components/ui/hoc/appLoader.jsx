@@ -16,7 +16,6 @@ const AppLoader = ({ children }) => {
         dispatch(loadProjectsList());
         dispatch(loadRolesList());
         dispatch(loadSocialList());
-        // dispatch(loadUsersList());
     }, []);
     if (usersStatusLoading) return <Loader />;
     return children;

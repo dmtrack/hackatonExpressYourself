@@ -11,7 +11,6 @@ const UsersListPage = () => {
     const history = useHistory();
     const users = useSelector(getUsersList());
     const handleOpenCard = (id) => {
-        // history.push(`/users/${id}`);
         history.push(`/${id}`);
     };
     const handleToggleBookmark = (id) => {

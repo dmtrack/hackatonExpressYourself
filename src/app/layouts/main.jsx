@@ -2,16 +2,16 @@ import React from "react";
 import UsersListPage from "../components/pages/usersListPage/usersListPage";
 import Badge from "../components/common/badge";
 import { colors } from "../utils/colors";
-// import useMockData from "../utils/mockData";
+import useMockData from "../utils/mockData";
 
 const Main = () => {
-    // const { error, initialize, progress, status } = useMockData();
-    // const handleClick = () => {
-    //     initialize();
-    // };
+    const { error, initialize, progress, status } = useMockData();
+    const handleClick = () => {
+        initialize();
+    };
     return (
         <div className="bg-secondary bg-opacity-10">
-            {/* <div className="container mt-5">
+            <div className="container mt-5">
                 <h3>Инициализация данных в FireBase</h3>
                 <ul>
                     <li>Status: {status}</li>
@@ -22,7 +22,7 @@ const Main = () => {
                     {" "}
                     Инициализировать
                 </button>
-            </div> */}
+          </div>
             <div className="col-md-10 mx-auto pt-4 text-center">
                 <Badge
                     content="Our Amazing Team"

@@ -2,7 +2,7 @@ const BOOKMARKS = "bookmarks";
 const CURRENT_USER = "currentUser";
 
 export function authUser(userData) {
-    return localStorage.setItem(CURRENT_USER, JSON.stringify(userData));
+    localStorage.setItem(CURRENT_USER, JSON.stringify(userData));
 }
 export function getUser() {
     return JSON.parse(localStorage.getItem(CURRENT_USER));
@@ -13,15 +13,15 @@ export function fetchAllUsers() {
 }
 
 export function setUsers(data) {
-    return localStorage.setItem(BOOKMARKS, JSON.stringify(data));
+    localStorage.setItem(BOOKMARKS, JSON.stringify(data));
 }
 
 export function removeUser() {
-    return localStorage.removeItem(CURRENT_USER);
+    localStorage.removeItem(CURRENT_USER);
 }
 
 export function removeBookmarks() {
-    return localStorage.removeItem(BOOKMARKS);
+    localStorage.removeItem(BOOKMARKS);
 }
 
 const localStorageService = {
