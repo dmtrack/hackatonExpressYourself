@@ -15,11 +15,11 @@ const AppLoader = ({ children }) => {
     const dispatch = useDispatch();
     const usersStatusLoading = useSelector(getUsersLoadingStatus());
     useEffect(() => {
-        dispatch(loadUsersList());
+        dispatch(loadStackList());
         dispatch(loadProjectsList());
         dispatch(loadRolesList());
         dispatch(loadSocialList());
-        dispatch(loadStackList());
+        dispatch(loadUsersList());
     }, []);
     if (usersStatusLoading) return <Loader />;
     return children;

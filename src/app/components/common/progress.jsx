@@ -7,7 +7,7 @@ const Progress = ({ percent, title, color, type }) => {
         const classes = `progress-bar bg-${color}` +
             (type === "animatedStripe" ? " progress-bar-striped progress-bar-animated" : "");
         return <>
-            <h4>{title}</h4>
+            <p>{title}</p>
             <div className="progress">
                 <div
                     className={classes}
@@ -24,7 +24,7 @@ const Progress = ({ percent, title, color, type }) => {
     };
     return (
         <>
-            <h4>{title}</h4>
+            <p>{title}</p>
             <CircleProgress percent={percent} color={color} />
         </>
     );

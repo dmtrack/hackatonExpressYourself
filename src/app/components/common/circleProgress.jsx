@@ -28,7 +28,10 @@ const CircleProgress = ({ size, color, percent }) => {
             cx={size / 2}
             cy={size / 2}
             r={radius}
-            strokeWidth={`${width}px`} />
+            strokeWidth={`${width}px`}
+            style={{
+                fill: "none"
+            }}/>
         <circle
             cx={size / 2}
             cy={size / 2}

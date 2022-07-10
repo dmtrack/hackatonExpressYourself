@@ -15,12 +15,9 @@ const UserPage = () => {
 
     return (
         user && (
-            <div className="container">
-                <div className="row gutters-sm">
-                    <div className="col-md-4 mb-3">
-
-                        <UserFullCard user={user} projects={projectsList} />
-                    </div>
+            <div className="bg-secondary bg-opacity-10 p-2">
+                <div className="container">
+                    <UserFullCard user={user} projects={projectsList} />
                 </div>
             </div>
         )
