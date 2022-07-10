@@ -36,7 +36,7 @@ const UserCard = ({
                     />
                 </div>
             </div>
-            <div className="card-body d-flex flex-column text-left align-items-center ">
+            <div className="card-body d-flex flex-column text-left align-items-center justify-content-betwen">
                 <div>
                     <h5 className="card-title mb-2 ">
                         <span>{name}</span>

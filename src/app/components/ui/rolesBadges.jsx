@@ -6,13 +6,12 @@ import { useSelector } from "react-redux";
 
 const RolesBadges = ({ roleIds, size }) => {
     const rolesArray = useSelector(getRoleByIds(roleIds));
-    console.log(rolesArray);
     return (
-        <div>
+        <div className="d-flex justify-content-evenly w-100 gap-2">
             {
                 rolesArray?.map(role =>
                     <Badge
-                        key={role._id}
+                        key={"role" + role._id}
                         content={role.name}
                         color={role.name === "student" ? "primary" : "danger"}
                         size={size}

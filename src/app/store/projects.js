@@ -54,7 +54,7 @@ export const getProjectsList = (ids) => (state) => {
             allProjects.forEach((project, index) => {
                 if (id === project._id) {
                     userProjectsArray.push({
-                        index: index,
+                        index,
                         _id: project._id,
                         description: project.description,
                         path: project.path,
@@ -68,10 +68,5 @@ export const getProjectsList = (ids) => (state) => {
         return userProjectsArray;
     }
 };
-// export const getProjectsList = () => (state) => {
-//     if (state.projects.entities) {
-//         return state.projects.entities;
-//     }
-// };
 
 export default projectsReducer;

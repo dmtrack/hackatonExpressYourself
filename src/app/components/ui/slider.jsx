@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 const Slider = ({ elements }) => {
-    console.log(elements);
     const [activeSlide, setActiveSlide] = useState(0);
     const handleNextSlide = () => {
         if (activeSlide < elements.length - 1) {
@@ -16,7 +15,7 @@ const Slider = ({ elements }) => {
     };
     return (
         elements && (
-            <div className="carousel slide" data-ride="carousel">
+            <div className="carousel slide pb-4" data-ride="carousel">
                 <div className="carousel-inner">
                     {elements.map((element, index) => (
                         <div
@@ -46,7 +45,7 @@ const Slider = ({ elements }) => {
                     onClick={handlePrevSlide}
                 >
                     <span
-                        className="carousel-control-prev-icon"
+                        className="carousel-control-prev-icon bg-secondary"
                         aria-hidden="true"
                     ></span>
                     <span className="sr-only"></span>
@@ -56,7 +55,7 @@ const Slider = ({ elements }) => {
                     onClick={handleNextSlide}
                 >
                     <span
-                        className="carousel-control-next-icon"
+                        className="carousel-control-next-icon bg-secondary"
                         aria-hidden="true"
                     ></span>
                     <span className="sr-only"></span>
