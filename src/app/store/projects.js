@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import projectsService from "../services/projects.service";
 import isOutDated from "../utils/isOutDated";
+import { element } from "prop-types";
 
 const projectsSlice = createSlice({
     name: "projects",
@@ -27,8 +28,7 @@ const projectsSlice = createSlice({
 });
 
 const { reducer: projectsReducer, actions } = projectsSlice;
-const { projectsRequested, projectsReceived, projectsRequestFailed } =
-    actions;
+const { projectsRequested, projectsReceived, projectsRequestFailed } = actions;
 
 export const loadProjectsList = () => async (dispatch, getState) => {
     const { lastFetch } = getState().projects;
@@ -46,9 +46,27 @@ export const loadProjectsList = () => async (dispatch, getState) => {
 export const getProjects = () => (state) => state.projects.entities;
 export const getProjectsLoadingStatus = () => (state) =>
     state.projects.isLoading;
-export const getProfessionById = (id) => (state) => {
+
+export const getProjectsList = (ids) => (state) => {
     if (state.projects.entities) {
-        return state.projects.entities.find((p) => p._id === id);
+        const userProjectsArray = [];
+        const allProjects = state.projects.entities;
+        ids.forEach((id) => {
+            allProjects.forEach((project, index) => {
+                if (id === project._id) {
+                    userProjectsArray.push({
+                        index: index,
+                        _id: project._id,
+                        description: project.default,
+                        path: project.path,
+                        stack: project.stack,
+                        title: project.title,
+                        image: project.image
+                    });
+                }
+            });
+        });
+        return userProjectsArray;
     }
 };
 
