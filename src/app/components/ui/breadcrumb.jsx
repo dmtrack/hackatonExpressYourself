@@ -22,7 +22,7 @@ const Breadcrumb = () => {
         return path;
     };
     return (
-        <div className="p-1 border-bottom pt-3 bg-secondary bg-opacity-10">
+        <div className="ps-1 border-bottom  border-secondary pt-3 bg-secondary bg-opacity-25">
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
                     <li
@@ -46,7 +46,6 @@ const Breadcrumb = () => {
                     ))}
                 </ol>
             </nav>
-            <hr/>
         </div>
     );
 };
