@@ -4,6 +4,7 @@ import TextField from "../common/form/textField";
 import CheckBoxField from "../common/form/checkBoxField";
 import localStorageService from "../../services/localStorage.service";
 import { useHistory } from "react-router-dom";
+import getRandomAvatar from "../../utils/getRandomAvatar";
 
 const RegisterForm = () => {
     const history = useHistory();
@@ -58,7 +59,11 @@ const RegisterForm = () => {
         e.preventDefault();
         const isValid = validate();
         if (!isValid) return;
-        localStorageService.authUser(data);
+        const newData = {
+            ...data,
+            image: getRandomAvatar()
+        };
+        localStorageService.authUser(newData);
         history.push("/bookmarks");
     };
 
