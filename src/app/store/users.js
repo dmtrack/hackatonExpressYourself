@@ -32,7 +32,9 @@ const usersSlice = createSlice({
         },
         userToggleBookmarked: (state, action) => {
             if (state.bookmarks.includes(action.payload)) {
-                state.bookmarks = state.bookmarks.filter(b => b !== action.payload);
+                state.bookmarks = state.bookmarks.filter(
+                    (b) => b !== action.payload
+                );
             } else {
                 state.bookmarks.push(action.payload);
             }
