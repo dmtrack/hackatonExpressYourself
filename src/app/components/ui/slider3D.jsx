@@ -29,8 +29,8 @@ const Slider3D = ({ users, onToggleBookmark, onOpenCard }) => {
                 ]}
                 grabCursor={true}
                 centeredSlides={true}
-                spaceBetween={75}
-                slidesPerView={3}
+                spaceBetween={50}
+                slidesPerView={2}
                 navigation
                 pagination={{ clickable: true }}
                 mousewheel
@@ -38,8 +38,8 @@ const Slider3D = ({ users, onToggleBookmark, onOpenCard }) => {
                 effect={"coverflow"}
                 coverflowEffect={{
                     rotate: 50,
-                    stretch: 0,
-                    depth: 200,
+                    stretch: 5,
+                    depth: 150,
                     modifier: 1,
                     slideShadows: true
                 }}

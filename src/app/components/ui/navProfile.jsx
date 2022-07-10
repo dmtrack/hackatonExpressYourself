@@ -1,14 +1,20 @@
 import React, { useState } from "react";
 import localStorageService from "../../services/localStorage.service";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logOut } from "../../store/users";
 // import { useSelector } from "react-redux";
 // import { getCurrentUserData } from "../../store/users";
 
 const NavProfile = () => {
+    const dispatch = useDispatch();
     const currentUser = localStorageService.getUser();
     const [isOpen, setOpen] = useState(false);
     const toggleMenu = () => {
         setOpen((prevState) => !prevState);
+    };
+    const handleLogOut = () => {
+        dispatch(logOut());
     };
     if (!currentUser) return "Loading...";
     return (
@@ -23,7 +29,7 @@ const NavProfile = () => {
                 />
             </div>
             <div className={"w-100 dropdown-menu" + (isOpen ? " show" : "")}>
-                <Link to="/logout" className="dropdown-item">
+                <Link onClick={handleLogOut} to="/" className="dropdown-item">
                     Log Out
                 </Link>
             </div>

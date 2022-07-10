@@ -6,7 +6,7 @@ import localStorageService from "../services/localStorage.service";
 const Bookmarks = () => {
     const isAuth = localStorageService.getUser();
     return (
-        <div className="mb-5">
+        <div className="">
             {isAuth ? (
                 <BookmarksPage />
             ) : (

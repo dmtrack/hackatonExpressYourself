@@ -1,6 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAction, createSlice } from "@reduxjs/toolkit";
 import localStorageService from "../services/localStorage.service";
-
+import history from "../utils/history";
 import userService from "../services/user.service";
 
 const initialState = {
@@ -8,6 +8,8 @@ const initialState = {
     isLoading: false,
     error: null,
     dataLoaded: false,
+    auth: { userId: localStorageService.getUser() },
+    isLoggedIn: localStorageService.getUser(),
     bookmarks: localStorageService.fetchAllUsers(),
     bookmarksCount: localStorageService.fetchAllUsers().length
 };
@@ -36,6 +38,15 @@ const usersSlice = createSlice({
             }
             state.bookmarksCount = state.bookmarks.length;
             localStorageService.setUsers(state.bookmarks);
+        },
+        authSuccess: (state, action) => {
+            state.auth = action.payload;
+            state.isLoggedIn = true;
+        },
+        userLoggedOut: (state) => {
+            state.bookmarks = null;
+            state.isLoggedIn = false;
+            state.auth = null;
         }
     }
 });
@@ -45,8 +56,24 @@ const {
     usersRequested,
     usersReceived,
     usersRequestFailed,
-    userToggleBookmarked
+    userToggleBookmarked,
+    authSuccess,
+    userLoggedOut
 } = actions;
+
+const authRequested = createAction("users/authRequested");
+
+export const login = ({ payload, redirect }) => (dispatch) => {
+    dispatch(authRequested());
+    const data = localStorageService.authUser(payload);
+    dispatch(authSuccess(data));
+    history.push(redirect);
+};
+export const logOut = () => (dispatch) => {
+    localStorageService.removeUser();
+    localStorageService.removeBookmarks();
+    dispatch(userLoggedOut());
+};
 
 export const loadUsersList = () => async (dispatch) => {
     dispatch(usersRequested());
@@ -75,6 +102,8 @@ export const getUserBookmarkedStatus = (userId) => (state) => {
         return state.users.bookmarks.find((u) => u._id === userId);
     }
 };
+
+export const getIsLoggedIn = () => (state) => state.users.isLoggedIn;
 
 export const getDataStatus = () => (state) => state.users.dataLoaded;
 export const getUsersLoadingStatus = () => (state) => state.users.isLoading;
