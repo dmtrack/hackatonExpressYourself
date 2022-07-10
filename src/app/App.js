@@ -8,8 +8,6 @@ import Bookmarks from "./layouts/bookmarks";
 import AppLoader from "./components/ui/hoc/appLoader";
 import Breadcrumb from "./components/ui/breadcrumb";
 import Footer from "./components/ui/footer";
-import Register from "./layouts/register";
-import UsersLoader from "./components/ui/hoc/usersLoader";
 
 const App = () => {
     return (

@@ -1,15 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-
-// - Отобразить информацию о человеке ОК
-// - Имя, фамилия ОК
-// - Возраст ОК
-// - О себе ОК
-// - Фото (если нет фотографии, то любимая картинка) ОК
-// - Социальные сети  ОК
-// - Чем занимался в разработке данного проекта
+import Slider from "./slider";
 
 const UserFullCard = ({ user, projects }) => {
+    console.log(projects);
+
     return (
         <div>
             <div>
@@ -37,10 +32,15 @@ const UserFullCard = ({ user, projects }) => {
                                     role="button"
                                 ></i>
                             </div>
-                        </div>
-                    </div>
-                    <div>Выполненные проекты</div>
-                </div>
+                {/*<span className="ms-2 text-secondary">*/}
+                {/*    {user.socialNetworks.map((element) => (*/}
+                {/*        <div key={element._id}>*/}
+                {/*            <span>{`Ссылка: ${element.path}`}</span>*/}
+                {/*        </div>*/}
+                {/*    ))}*/}
+                {/*</span>*/}
+            </div>
+            <Slider elements={projects} />
                 <span className="ms-2 text-secondary">
                     {user.socialNetworks.map((element) => (
                         <div key={element._id}>
@@ -110,6 +110,7 @@ const UserFullCard = ({ user, projects }) => {
 };
 
 UserFullCard.propTypes = {
-    user: PropTypes.object
+    user: PropTypes.object,
+    projects: PropTypes.array
 };
 export default UserFullCard;

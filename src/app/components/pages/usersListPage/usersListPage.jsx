@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 import { getDataStatus, getUsersList, toggleUsersBookmarks } from "../../../store/users";
 import Loader from "../../common/loader";
 import UserCard from "../../ui/userCard";
-import localStorageService from "../../../services/localStorage.service";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
     Navigation,
@@ -38,7 +37,6 @@ const UsersListPage = () => {
     if (!dataStatus) return <Loader />;
     return (
         <div className="d-flex flex-column">
-            <div className="col-md-8 mx-auto my-3 p-2">
                 <h1 className="text-center">Our Team</h1>
                 <p>
                     We are students of group 23 of the Result School,
@@ -57,7 +55,6 @@ const UsersListPage = () => {
                     but now we are doing the same thing
                 </p>
             </div>
-            <div className="my-4">
                 <Swiper
                     modules={[
                         Navigation,
@@ -80,7 +77,6 @@ const UsersListPage = () => {
                         rotate: 50,
                         stretch: 0,
                         depth: 200,
-                        modifier: 1,
                         slideShadows: true
                     }}
                     className="mySwiper"
@@ -88,7 +84,6 @@ const UsersListPage = () => {
                     {users.map(user => (
                         <SwiperSlide key={user._id}>
                             <UserCard
-                                onToggleBookmark={handleToggleBookmark}
                                 onOpenCard={handleOpenCard}
                                 {...user}
                             />
