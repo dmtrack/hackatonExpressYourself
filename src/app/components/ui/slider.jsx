@@ -1,120 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 const Slider = ({ elements }) => {
-    // const handleSlideChange = () => {};
-
+    console.log(elements);
+    const [activeSlide, setActiveSlide] = useState(0);
+    const handleNextSlide = () => {
+        if (activeSlide < elements.length - 1) {
+            setActiveSlide((prevState) => prevState + 1);
+        } else setActiveSlide(0);
+    };
+    const handlePrevSlide = () => {
+        if (activeSlide > 0) {
+            setActiveSlide((prevState) => prevState - 1);
+        } else setActiveSlide(elements.length - 1);
+    };
     return (
         elements && (
-            <div
-                id="carouselExampleIndicators"
-                className="carousel slide"
-                data-ride="carousel"
-            >
-                <ol className="carousel-indicators">
-                    {elements.map((element, index) =>
-                        index === 0 ? (
-                            <li
-                                key={element._id}
-                                data-target="#carouselExampleIndicators"
-                                data-slide-to={elements.index + 1}
-                                className="active"
-                            ></li>
-                        ) : (
-                            <li
-                                key={element._id}
-                                data-target="#carouselExampleIndicators"
-                                data-slide-to={elements.index + 1}
-                                className=""
-                            ></li>
-                        )
-                    )}
-                </ol>
+            <div className="carousel slide" data-ride="carousel">
                 <div className="carousel-inner">
-                    {elements.map((element, index) =>
-                        index === 0 ? (
-                            <div
-                                className="carousel-item active"
-                                key={element._id}
-                            >
-                                <img
-                                    className="d-block w-100"
-                                    src={element.image}
-                                    alt={element.title}
-                                />
+                    {elements.map((element, index) => (
+                        <div
+                            className={
+                                "carousel-item" +
+                                (index === activeSlide ? " active" : "")
+                            }
+                            key={index + "slide"}
+                        >
+                            {" "}
+                            <h6 className="mt-2 text-muted text-center">
+                                {element.title}
+                            </h6>
+                            <img
+                                className="d-block w-100"
+                                src={element.image}
+                                alt={element.title}
+                            />
+                            <div className="text-muted text-center mt-2">
+                                <p>{element.description}</p>
                             </div>
-                        ) : (
-                            <div className="carousel-item" key={element._id}>
-                                <img
-                                    className="d-block w-100"
-                                    src={element.image}
-                                    alt={element.title}
-                                />
-                            </div>
-                        )
-                    )}
+                        </div>
+                    ))}
                 </div>
-                <a
+                <button
                     className="carousel-control-prev"
-                    href="#carouselExampleIndicators"
-                    role="button"
-                    data-slide="prev"
+                    onClick={handlePrevSlide}
                 >
                     <span
                         className="carousel-control-prev-icon"
                         aria-hidden="true"
                     ></span>
-                    <span className="sr-only">Previous</span>
-                </a>
-                <a
+                    <span className="sr-only"></span>
+                </button>
+                <button
                     className="carousel-control-next"
-                    href="#carouselExampleIndicators"
-                    role="button"
-                    data-slide="next"
+                    onClick={handleNextSlide}
                 >
                     <span
                         className="carousel-control-next-icon"
                         aria-hidden="true"
                     ></span>
-                    <span className="sr-only">Next</span>
-                </a>
+                    <span className="sr-only"></span>
+                </button>
             </div>
         )
     );
-    // return (
-    //     elements && (
-    //         <div className="container">
-    //             <div
-    //                 id="carousel"
-    //                 className="carousel slide"
-    //                 data-ride="carousel"
-    //                 // style="display: inline-block"
-    //             >
-    //                 <div className="carousel-inner">
-    //                     {elements.map((element, index) =>
-    //                         index === 0 ? (
-    //                             <div className="item active" key={element._id}>
-    //                                 <img
-    //                                     className="img-fluid"
-    //                                     src={element.image}
-    //                                     alt={element.title}
-    //                                 />
-    //                             </div>
-    //                         ) : (
-    //                             <div className="item" key={element._id}>
-    //                                 <img
-    //                                     className="img-fluid"
-    //                                     src={element.image}
-    //                                     alt={element.title}
-    //                                 />
-    //                             </div>
-    //                         )
-    //                     )}
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     )
-    // );
 };
 
 Slider.propTypes = {

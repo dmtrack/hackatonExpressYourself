@@ -2,9 +2,7 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../../common/loader";
-import {
-    getUsersLoadingStatus
-} from "../../../store/users";
+import { getUsersLoadingStatus } from "../../../store/users";
 import { loadProjectsList } from "../../../store/projects";
 import { loadRolesList } from "../../../store/roles";
 import { loadSocialList } from "../../../store/social";
@@ -18,7 +16,7 @@ const AppLoader = ({ children }) => {
         dispatch(loadProjectsList());
         dispatch(loadRolesList());
         dispatch(loadSocialList());
-        dispatch(loadUsersList());
+        // dispatch(loadUsersList());
     }, []);
     if (usersStatusLoading) return <Loader />;
     return children;
