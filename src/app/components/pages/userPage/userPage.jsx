@@ -7,20 +7,16 @@ import { getUserById } from "../../../store/users";
 
 const UserPage = () => {
     const { userId } = useParams();
-    let projectsList = null;
     const user = useSelector(getUserById(userId));
-    if (user) {
-        projectsList = useSelector(getProjectsList(user.projects));
-    }
-
+    const projectsList = useSelector(getProjectsList(user.projects));
+    console.log(user);
+    console.log(projectsList);
     return (
-        user && (
-            <div className="bg-secondary bg-opacity-10 p-2">
-                <div className="container">
-                    <UserFullCard user={user} projects={projectsList} />
-                </div>
+        <div className="bg-secondary bg-opacity-10 p-2">
+            <div className="container">
+                <UserFullCard user={user} projects={projectsList} />
             </div>
-        )
+        </div>
     );
 };
 

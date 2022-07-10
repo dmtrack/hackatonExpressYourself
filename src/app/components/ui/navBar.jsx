@@ -24,7 +24,7 @@ const NavBar = () => {
                     </li>
                 </ul>
                 <div className="bg-light rounded-3 px-3 py-1 text-muted lh-2">
-                    Hackaton-2 Project
+                    Hackaton-2
                 </div>
                 <div className="d-flex">
                     {isLoggedIn ? (

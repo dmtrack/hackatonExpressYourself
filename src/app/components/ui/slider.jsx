@@ -27,17 +27,17 @@ const Slider = ({ elements }) => {
                             key={index + "slide"}
                         >
                             {" "}
-                            <h6 className="mt-2 text-muted text-center">
+                            <h4 className="mt-2 text-muted text-center">
                                 {element.title}
-                            </h6>
+                            </h4>
+                            <h5 className="mt-2 text-muted text-center">
+                                {element.description}
+                            </h5>
                             <img
                                 className="d-block w-100"
                                 src={element.image}
                                 alt={element.title}
                             />
-                            <div className="text-muted text-center mt-2">
-                                <p>{element.description}</p>
-                            </div>
                         </div>
                     ))}
                 </div>

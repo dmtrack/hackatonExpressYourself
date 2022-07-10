@@ -11,7 +11,7 @@ const Main = () => {
     };
     return (
         <div className="bg-secondary bg-opacity-10">
-            <div className="container mt-5">
+            <div className="container pt-5">
                 <h3>Инициализация данных в FireBase</h3>
                 <ul>
                     <li>Status: {status}</li>
@@ -22,7 +22,7 @@ const Main = () => {
                     {" "}
                     Инициализировать
                 </button>
-          </div>
+            </div>
             <div className="col-md-10 mx-auto pt-4 text-center">
                 <Badge
                     content="Our Amazing Team"
@@ -36,11 +36,13 @@ const Main = () => {
                 <div className="fs-5 py-2 text-secondary">
                     Here you can find information about each project participan and you can contact them if necessary.
                 </div>
-                <Badge
-                    content="We are from different countries, from different professions, but now we are doing the same thing"
-                    color={colors.primary}
-                    size={4}
-                />
+                <div className="pb-3">
+                    <Badge
+                        content="We are from different countries, from different professions, but now we are doing the same thing"
+                        color={colors.primary}
+                        size={4}
+                    />
+                </div>
             </div>
             <UsersListPage />
         </div>
