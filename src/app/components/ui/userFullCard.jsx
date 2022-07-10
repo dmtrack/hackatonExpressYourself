@@ -28,7 +28,9 @@ const UserFullCard = ({ user, projects }) => {
                         className="rounded mx-auto d-block"
                         width="100%"
                     />
-                    <RolesBadges roleIds={user.roles} size={4}/>
+                    <div className="pt-2 w-100">
+                        <RolesBadges roleIds={user.roles} size={4}/>
+                    </div>
                 </div>
                 <div className="col-md-7">
                     <div className="text-center py-3">
@@ -64,7 +66,7 @@ const UserFullCard = ({ user, projects }) => {
                                             return (
                                                 stackData
                                                     ? <div
-                                                        key={stack._id}
+                                                        key={"stack" + stack._id}
                                                         style={{ width: "20%" }}>
                                                         <Progress
                                                             percent={stack.percent}
