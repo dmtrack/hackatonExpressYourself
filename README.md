@@ -1,6 +1,6 @@
 
 ## *** Hackaton project SPA ***
-[https://dmtrack.github.io/hackaton-02-ExpressYourself-1]
+[https://dmtrack.github.io/hackatonExpressYourself]
 
 ### Description
 This project was created during hackaton at Frontend-developer course.
