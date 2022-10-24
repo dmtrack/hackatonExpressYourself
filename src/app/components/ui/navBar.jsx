@@ -17,7 +17,11 @@ const NavBar = () => {
                         </Link>
                     </li>
                     <li className="nav-item position-relative">
-                        <Link className="nav-link " aria-current="page" to="/bookmarks">
+                        <Link
+                            className="nav-link "
+                            aria-current="page"
+                            to="/bookmarks"
+                        >
                             Bookmarks
                         </Link>
                         <BookmarkCounter />
@@ -31,7 +35,7 @@ const NavBar = () => {
                         <NavProfile />
                     ) : (
                         <Link
-                            className="nav-link bg-light rounded-3 lh-1"
+                            className="nav-link bg-light rounded-3 lh-3 text-muted"
                             aria-current="page"
                             to="/register"
                         >
