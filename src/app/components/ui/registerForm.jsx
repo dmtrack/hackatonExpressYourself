@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { validator } from "../../utils/validator";
 import TextField from "../common/form/textField";
 import CheckBoxField from "../common/form/checkBoxField";
-import { useHistory } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import getRandomAvatar from "../../utils/getRandomAvatar";
 import { login } from "../../store/users";
 import { useDispatch } from "react-redux";
 
 const RegisterForm = () => {
     const dispatch = useDispatch();
-    const history = useHistory();
+    const location = useLocation();
     const [data, setData] = useState({
         name: "",
         email: "",
@@ -43,8 +43,7 @@ const RegisterForm = () => {
         },
         personal: {
             isRequired: {
-                message:
-                    "You must confirm the processing of personal data"
+                message: "You must confirm the processing of personal data"
             }
         }
     };
@@ -65,9 +64,7 @@ const RegisterForm = () => {
             ...data,
             image: getRandomAvatar()
         };
-        const redirect = history.location.state
-            ? history.location.state.from.pathname
-            : "/";
+        const redirect = location.state ? location.pathname : "/";
         dispatch(login({ payload: newData, redirect }));
     };
 

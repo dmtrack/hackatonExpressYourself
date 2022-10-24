@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 const CheckBoxField = ({ name, value, onChange, children, error }) => {
     const handleChange = () => {
+        // eslint-disable-next-line
         onChange({ name: name, value: !value });
     };
     const getInputClasses = () => {

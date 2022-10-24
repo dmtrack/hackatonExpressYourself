@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { getUsersList, toggleUsersBookmarks } from "../../../store/users";
 import localStorageService from "../../../services/localStorage.service";
 import Slider3D from "../../ui/slider3D";
@@ -8,20 +8,20 @@ import Slider3D from "../../ui/slider3D";
 const UsersListPage = () => {
     const isAuth = localStorageService.getUser();
     const dispatch = useDispatch();
-    const history = useHistory();
+    const navigate = useNavigate();
     const users = useSelector(getUsersList());
     const handleOpenCard = (id) => {
         if (isAuth) {
-            history.push(`/${id}`);
+            navigate(`/${id}`);
         } else {
-            history.push("/register");
+            navigate("/register");
         }
     };
     const handleToggleBookmark = (id) => {
         if (isAuth) {
             dispatch(toggleUsersBookmarks(id));
         } else {
-            history.push("/register");
+            navigate("/register");
         }
     };
     return (

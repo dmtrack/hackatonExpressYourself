@@ -1,12 +1,15 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import UserFullCard from "../../ui/userFullCard";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import { getProjectsList } from "../../../store/projects";
 import { getUserById } from "../../../store/users";
+import PropTypes from "prop-types";
 
-const UserPage = () => {
-    const { userId } = useParams();
+const UserPage = (props) => {
+    const { userId } = props;
+    // const { userId } = useParams();
+
     const user = useSelector(getUserById(userId));
     const projectsList = useSelector(getProjectsList(user.projects));
     return (
@@ -18,4 +21,7 @@ const UserPage = () => {
     );
 };
 
+UserPage.propTypes = {
+    userId: PropTypes.string
+};
 export default UserPage;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import Main from "./layouts/main";
 import NavBar from "./components/ui/navBar";
@@ -18,13 +18,12 @@ const App = () => {
                 <UsersLoader>
                     <NavBar />
                     <Breadcrumb />
-                    <Switch>
-                        <Route path="/bookmarks" exact component={Bookmarks} />
-                        <Route path="/register" exact component={Register} />
-                        <Route path="/" exact component={Main} />
-                        <Route path="/:userId?" exact component={User} />
-                        <Redirect to="/" />
-                    </Switch>
+                    <Routes>
+                        <Route path="/bookmarks" element={<Bookmarks />} />
+                        <Route path="/register" element={<Register />} />
+                        <Route path="/" element={<Main />} />
+                        <Route path="/:userId" element={<User />} />
+                    </Routes>
                     <Footer />
                 </UsersLoader>
             </AppLoader>

@@ -25,10 +25,13 @@ const UserCard = ({
     return (
         <div className="w-100 h-100 p-2 shadow-lg col-md-12 col-sm-8 col-xs-12 text-center">
             <div className="m-auto position-relative">
-                <div className="rounded-circle m-auto" style={{
-                    width: "175px",
-                    height: "175px"
-                }}>
+                <div
+                    className="rounded-circle m-auto"
+                    style={{
+                        width: "175px",
+                        height: "175px"
+                    }}
+                >
                     <img
                         src={image}
                         className="img-fluid border border-2 rounded-circle border-primary"
@@ -60,7 +63,7 @@ const UserCard = ({
                     />
                     <BookMark
                         onClick={() => handleClick(_id)}
-                        status = {isSelectedUSer}
+                        status={isSelectedUSer}
                     />
                 </div>
             </div>
@@ -80,7 +83,6 @@ UserCard.propTypes = {
     roles: PropTypes.array,
     onOpenCard: PropTypes.func,
     onToggleBookmark: PropTypes.func
-
 };
 
 export default UserCard;

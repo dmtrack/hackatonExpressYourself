@@ -1,24 +1,25 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { useHistory, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { getUserById } from "../../store/users";
 import { getPathArray } from "../../utils/getPathArray";
 
 const Breadcrumb = () => {
-    const history = useHistory();
+    const navigate = useNavigate();
     const { pathname } = useLocation();
+    console.log(pathname);
     const pathArr = getPathArray(pathname);
     const handleRedirect = (path) => {
         if (typeof path === "object") {
-            history.push("/");
+            navigate("/");
             return;
         }
-        history.push(`${path}`);
+        navigate(`${path}`);
     };
 
     const getPath = (path) => {
         const user = useSelector(getUserById(path));
-        if (user) return (user.name + " " + user.surName);
+        if (user) return user.name + " " + user.surName;
         return path;
     };
     return (
@@ -33,17 +34,18 @@ const Breadcrumb = () => {
                     >
                         <i className="bi bi-house-door"></i>
                     </li>
-                    {pathArr.length !== 0 && pathArr.map(path => (
-                        <li
-                            role="button"
-                            onClick={() => handleRedirect(path)}
-                            key={path}
-                            className="breadcrumb-item"
-                            aria-current="page"
-                        >
-                            {getPath(path)}
-                        </li>
-                    ))}
+                    {pathArr.length !== 0 &&
+                        pathArr.map((path) => (
+                            <li
+                                role="button"
+                                onClick={() => handleRedirect(path)}
+                                key={path}
+                                className="breadcrumb-item"
+                                aria-current="page"
+                            >
+                                {getPath(path)}
+                            </li>
+                        ))}
                 </ol>
             </nav>
         </div>

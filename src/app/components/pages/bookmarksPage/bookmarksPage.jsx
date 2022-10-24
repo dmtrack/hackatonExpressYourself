@@ -1,20 +1,24 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import localStorageService from "../../../services/localStorage.service";
-import { getBookmarkUsersList, getUsersList, toggleUsersBookmarks } from "../../../store/users";
+import {
+    getBookmarkUsersList,
+    getUsersList,
+    toggleUsersBookmarks
+} from "../../../store/users";
 import UserCard from "../../ui/userCard";
 
 const BookmarksPage = () => {
     const isAuth = localStorageService.getUser();
     const dispatch = useDispatch();
-    const history = useHistory();
+    const navigate = useNavigate();
     const bookmarkedUsers = useSelector(getBookmarkUsersList());
     const users = useSelector(getUsersList());
     const findUsers = () => {
         const arr = [];
         if (bookmarkedUsers) {
-            users.forEach(user => {
+            users.forEach((user) => {
                 if (bookmarkedUsers.includes(user._id)) {
                     arr.push(user);
                 }
@@ -29,14 +33,14 @@ const BookmarksPage = () => {
         if (isAuth) {
             dispatch(toggleUsersBookmarks(id));
         } else {
-            history.push("/register");
+            navigate("/register");
         }
     };
     const newUsers = findUsers();
     return (
         <div className="d-flex justify-content-center flex-wrap mb-5">
             {newUsers.length > 0 ? (
-                newUsers.map(user => (
+                newUsers.map((user) => (
                     <div
                         key={user._id}
                         className="container-fluid my-3"
@@ -50,8 +54,8 @@ const BookmarksPage = () => {
                             onOpenCard={handleOpenCard}
                         />
                     </div>
-                )
-                )) : (
+                ))
+            ) : (
                 <h1 className="my-5">Please, add users</h1>
             )}
         </div>
