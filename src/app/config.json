@@ -1,4 +1,4 @@
 {
-    "apiEndpoint": "https://hackaton-02-ce364-default-rtdb.europe-west1.firebasedatabase.app/",
+    "apiEndpoint": "https://hackatonjswd-default-rtdb.firebaseio.com/",
     "isFireBase": true
 }

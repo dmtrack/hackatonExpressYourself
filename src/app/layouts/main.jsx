@@ -13,11 +13,14 @@ const Main = () => {
                     size={1}
                 />
                 <div className="fs-4 pt-2">
-                    We are students of group 23 of the Result School,
-                    beginning Frontend Developers. We developed this project together with React and Redux technologies using the knowledge and skills gained while studying the Frontend module.
+                    We are students of group 23 of the Result School, beginning
+                    Frontend Developers. We developed this project together with
+                    React and Redux technologies using the knowledge and skills
+                    gained while studying the Frontend module.
                 </div>
                 <div className="fs-5 py-2 text-secondary">
-                    Here you can find information about each project participan and you can contact them if necessary.
+                    Here you can find information about each project participan
+                    and you can contact them if necessary.
                 </div>
                 <div className="pb-3">
                     <Badge
