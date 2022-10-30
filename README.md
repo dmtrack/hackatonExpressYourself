@@ -1,5 +1,5 @@
 
-## *** Hackaton project SPA ***
+## Hackaton project SPA
 [https://dmtrack.github.io/hackatonExpressYourself/](https://dmtrack.github.io/hackatonExpressYourself/)
 
 ### Description
